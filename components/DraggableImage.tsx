@@ -1,25 +1,26 @@
-interface PhotoDrag {
-  photo: Photo;
-}
-import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
+import Image from 'next/image';
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 
-const DraggableImage = ({ photo }: PhotoDrag) => {
+const DraggableImage = ({ photo }: any) => {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: photo.id });
   const style = {
     transition,
     transform: CSS.Transform.toString(transform),
   };
-  const { src, photographer } = photo;
+  const src = photo?.src?.original;
+  const photographer = photo?.photographer;
   return (
-    <img
+    <Image
       className="w-[600px] h-[500px] object-cover rounded-2xl md:w-[300px] md:h-[300px]"
+      src={src}
+      alt={photographer}
+      width={0}
+      height={0}
       ref={setNodeRef}
       {...attributes}
       {...listeners}
-      src={src.original}
-      alt={photographer}
       style={style}
     />
   );
