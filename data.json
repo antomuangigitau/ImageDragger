@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Jonatan Pie",
+    "photo": "/assets/jonatan-pie-unsplash.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Jeffrey Workman",
+    "photo": "/assets/jeffrey-workman-unsplash.jpg"
+  }
+]
