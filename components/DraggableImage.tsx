@@ -13,11 +13,11 @@ const DraggableImage = ({ photo }: any) => {
   const photographer = photo?.photographer;
   return (
     <Image
-      className="w-[600px] h-[500px] object-cover rounded-2xl md:w-[300px] md:h-[300px]"
+      className="w-[600px] h-[500px] rounded-2xl md:w-[300px] md:h-[300px]"
       src={src}
       alt={photographer}
-      width={0}
-      height={0}
+      width={600}
+      height={500}
       ref={setNodeRef}
       {...attributes}
       {...listeners}
